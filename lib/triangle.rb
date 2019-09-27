@@ -1,11 +1,14 @@
 class Triangle
-  attr_accessor :a, :b, :c 
+  attr_accessor :sides
   
   def initialize(a,b,c)
-    @a = a 
-    @b = b 
-    @c = c
+    @sides = []
+    @sides << a 
+    @sides << b 
+    @sides << c
   end 
+  
+  def is_triangle
   
   def kind
     if @a == @b && @b == @c 
