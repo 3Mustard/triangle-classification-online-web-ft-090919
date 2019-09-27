@@ -2,19 +2,19 @@ class Triangle
   attr_accessor :a, :b, :c
   
   def initialize(a,b,c)
-    @sides << a 
-    @sides << b 
+    @a << a 
+    @b << b 
     @c << c
   end 
   
   def kind
-    if x == 0 || y == 0 || z == 0
+    if a == 0 || b == 0 || c == 0
       raise TriangleError
-    elsif x + y <= z || x + z <= y || y + z <= x
+    elsif a + b <= c || a + c <= b || b + c <= a
       raise TriangleError
-    elsif x == y && y == z
+    elsif a == b && b == c
       kind = :equilateral
-    elsif x == y && x != z || y == z && y != x || x == z && x != y
+    elsif a == b && a != c || b == c && b != a || a == c && a != b
       kind = :isosceles
     else
       kind = :scalene
