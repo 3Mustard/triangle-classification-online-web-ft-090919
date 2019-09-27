@@ -8,6 +8,8 @@ class Triangle
   end 
   
   def kind
-  
+    if @a == @b && @b == @c 
+      :scalene 
+    elsif 
   end 
 end
