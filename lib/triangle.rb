@@ -1,18 +1,23 @@
 class Triangle
-  attr_accessor :sides
+  attr_accessor :a, :b, :c
   
   def initialize(a,b,c)
-    @sides = []
     @sides << a 
     @sides << b 
-    @sides << c
+    @c << c
   end 
-  
-  def is_triangle
   
   def kind
-    if @a == @b && @b == @c 
-      :scalene 
-    elsif 
-  end 
+    if x == 0 || y == 0 || z == 0
+      raise TriangleError
+    elsif x + y <= z || x + z <= y || y + z <= x
+      raise TriangleError
+    elsif x == y && y == z
+      kind = :equilateral
+    elsif x == y && x != z || y == z && y != x || x == z && x != y
+      kind = :isosceles
+    else
+      kind = :scalene
+    end
+  end
 end
